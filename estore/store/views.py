@@ -1,26 +1,26 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 import json
 import datetime
 from .models import * 
 from .utils import cookieCart, cartData, guestOrder
-# views.py
-
 from django.db.models import Q
-from django.shortcuts import render
 from .models import Product
 
 def product_search(request):
     query = request.GET.get('q')
     products = Product.objects.filter(
-        Q(name__icontains=query) | Q(description__icontains=query)
+        Q(name__icontains=query) 
     ) if query else Product.objects.all()
     context = {
         'products': products,
         'query': query,
     }
-    return render(request, 'product_search.html', context)
+    return render(request, 'store/search.html', context)
 
+def product_view(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    return render(request, 'store/views.html', {'product': product})
 
 def store(request):
 	data = cartData(request)

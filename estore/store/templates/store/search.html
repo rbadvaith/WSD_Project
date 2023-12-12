@@ -1,26 +1,23 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-	<div class="row">
-		{% if query %}
-            <p>Search results for: "{{ query }}"</p>
-        
-		{% for query in products %}
-		<div class="col-lg-4">
-			<img class="thumbnail" src="{{product.imageURL}}">
-			<div class="box-element product">
-				<h6><strong>{{product.name}}</strong></h6>
-				<hr>
-
-				<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-				
-				<a class="btn btn-outline-success" href="#">View</a>
-				<h4 style="display: inline-block;"><strong>${{product.price}}</strong></h4>
-
-			</div>
-		</div>
-		{% endfor %}
-		{% endif %}
-	</div>
-
+    <div class="row">
+        {% if query %}
+        {% for product in products %}
+            <div class="col-lg-4">
+                <img class="thumbnail" src="{{ product.imageURL }}">
+                <div class="box-element product">
+                    <h6><strong>{{ product.name }}</strong></h6>
+                    <hr>
+                    <button data-product="{{ product.id }}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                    <a class="btn btn-outline-success" href="{% url 'views' product.id %}">View</a>
+                    <h4 style="display: inline-block;"><strong>${{product.price|floatformat:2}}</strong></h4>
+                </div>
+            </div>
+        {% endfor %}
+		        {% else %}
+            <p>No search results found.</p>
+        {% endif %}
+    </div>
 {% endblock content %}
+
