@@ -16,12 +16,12 @@ How to load this project:
    Django (pip install django)
    Pillow (pip install pillow) || for images to load
 6. Run application by using the cmd python manage.py runserver or python manage.py runserver port_of_your_choice (eg. python manage.py runserver 9000)
-7. When first open we could see that the app is under maintenance. To activate the app, go to http://127.0.0.1:8000/admin/ and enter the following credentials
+7. When first open sometiemes we could see that the app is under maintenance. To activate the app, go to http://127.0.0.1:8000/admin/ and enter the following credentials
 
    Username:rbadv
    Password:password
 
-8.Now return back to the homepage and you are good to go
+8.Now return back to the homepage and you are good to go. If you wish to shutdown this app, sign out of django admin page
 
 
 How to Add/Remove Products:
