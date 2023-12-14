@@ -28,26 +28,26 @@ How to Add/Remove Products:
 
 1.Add:
 
-1.go to http://127.0.0.1:8000/admin/
-2.Select Product Table
-3.Select Add new product
-4.Fill up the field shown in the page. (Keep the digitalized field untouched)
-5.Select save
-6.Now return back to the homepage and you can view the changes
+   1.go to http://127.0.0.1:8000/admin/
+   2.Select Product Table
+   3.Select Add new product
+   4.Fill up the field shown in the page. (Keep the digitalized field untouched)
+   5.Select save
+   6.Now return back to the homepage and you can view the changes
 
 2.Remove:
 
-1.go to http://127.0.0.1:8000/admin/
-2.Select Product Table
-3.Select the checkbox for your desired product 
-4.Go to action and select delete
-5.Now return back to the homepage and you can view the changes
+   1.go to http://127.0.0.1:8000/admin/
+   2.Select Product Table
+   3.Select the checkbox for your desired product 
+   4.Go to action and select delete
+   5.Now return back to the homepage and you can view the changes
 
 3.Update:
 
-1.go to http://127.0.0.1:8000/admin/
-2.Select Product Table
-3.Select your desired product 
-4.Update the field shown in the page. (Keep the digitalized field untouched)
-5.Select save
-6.Now return back to the homepage and you can view the changes
+   1.go to http://127.0.0.1:8000/admin/
+   2.Select Product Table
+   3.Select your desired product 
+   4.Update the field shown in the page. (Keep the digitalized field untouched)
+   5.Select save
+   6.Now return back to the homepage and you can view the changes
