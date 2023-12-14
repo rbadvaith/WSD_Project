@@ -8,19 +8,25 @@ from django.db.models import Q
 from .models import Product
 
 def product_search(request):
-    query = request.GET.get('q')
-    products = Product.objects.filter(
+	data = cartData(request)
+	query = request.GET.get('q')
+	cartItems = data['cartItems']
+	products = Product.objects.filter(
         Q(name__icontains=query) 
     ) if query else Product.objects.all()
-    context = {
+	context = {
         'products': products,
         'query': query,
+		'cartItems':cartItems
     }
-    return render(request, 'store/search.html', context)
+	return render(request, 'store/search.html', context)
 
 def product_view(request, product_id):
-    product = get_object_or_404(Product, id=product_id)
-    return render(request, 'store/views.html', {'product': product})
+	data = cartData(request)
+	cartItems = data['cartItems']
+	products = get_object_or_404(Product, id=product_id)
+	context={'product': products, 'cartItems':cartItems}
+	return render(request, 'store/views.html', context)
 
 def store(request):
 	data = cartData(request)
@@ -99,6 +105,8 @@ def processOrder(request):
 		ShippingAddress.objects.create(
 		customer=customer,
 		order=order,
+		name=data['form']['name'],
+		email=data['form']['email'],
 		address=data['shipping']['address'],
 		city=data['shipping']['city'],
 		state=data['shipping']['state'],
