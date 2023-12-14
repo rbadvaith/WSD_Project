@@ -42,16 +42,13 @@ def cookieCart(request):
         except Product.DoesNotExist:
             pass
 
-    # Apply tax calculation based on the total
     total_amount = order['get_cart_total']
     if total_amount < 50:
-        order['taxes'] = total_amount * 0.10  # 10% tax if total is less than 50
+        order['taxes'] = total_amount * 0.10  
     elif 50 <= total_amount < 100:
-        order['taxes'] = total_amount * 0.05  # 5% tax if total is between 50 and 100
+        order['taxes'] = total_amount * 0.05  
     else:
-        order['taxes'] = total_amount * 0.025  # 25% tax if total is above 100
-
-    # Calculate grand total including taxes
+        order['taxes'] = total_amount * 0.025  
     order['grand_total'] = total_amount + order['taxes']
 
     return {'cartItems': cartItems, 'order': order, 'items': items}
