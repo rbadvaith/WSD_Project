@@ -26,7 +26,7 @@ How to load this project:
 
 How to Add/Remove Products:
 
-Add:
+1.Add:
 
 1.go to http://127.0.0.1:8000/admin/
 2.Select Product Table
@@ -35,7 +35,7 @@ Add:
 5.Select save
 6.Now return back to the homepage and you can view the changes
 
-Remove:
+2.Remove:
 
 1.go to http://127.0.0.1:8000/admin/
 2.Select Product Table
@@ -43,7 +43,7 @@ Remove:
 4.Go to action and select delete
 5.Now return back to the homepage and you can view the changes
 
-Update:
+3.Update:
 
 1.go to http://127.0.0.1:8000/admin/
 2.Select Product Table
